@@ -36,7 +36,7 @@ app.use(session({ secret: 'workbench' }));
 
 // DB Config
 
-const db = `${process.env.MONGOURI}/${process.env.DBNAME}`;
+const db = `${process.env.MONGOURI}/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 // Connect to Mongo
 mongoose
