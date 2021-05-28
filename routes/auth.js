@@ -21,7 +21,7 @@ authRouter.post('/', (req, res) => {
 			bycrypt.compare(password, user.password)
 				.then((isMatch) => {
 					if (!isMatch) return res.status(400).send('Invalid credentials');
-
+					console.log(process.env.JWTEXPIRES);
 					jwt.sign(
 						{ id: user.id },
 						process.env.JWTSECRET,

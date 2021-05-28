@@ -51,9 +51,11 @@ mongoose
 
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const projectRouter = require('./routes/project');
 
 app.use('/user', userRouter);
 app.use('/auth', authRouter);
+app.use('/project', projectRouter);
 
 app.get('/', (req, res) => {
 	res.send('Hello world');
